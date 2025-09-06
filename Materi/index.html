@@ -1,0 +1,606 @@
+  <!DOCTYPE html>
+  <html lang="id">
+    <head>
+      <meta charset="utf-8" />
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      />
+
+      <title>Presentasi MPLS: Looking Forward for IT</title>
+
+      <!-- Framework & Theme Reveal.js -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css"
+        id="theme"
+      />
+      
+
+      <!-- Tailwind CSS untuk styling di dalam slide -->
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- Fonts & Icons -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet"
+      />
+      <script src="https://unpkg.com/lucide@latest"></script>
+
+      <!-- Custom Styling inspired by mahir.dev -->
+       
+      <style>
+        :root {
+          --r-main-font: "Inter", sans-serif;
+          --r-heading-font: "Poppins", sans-serif;
+          --r-heading-color: #ffffff;
+          --r-main-color: #e2e8f0; /* slate-200 */
+          --r-link-color: #67e8f9; /* cyan-300 */
+          --r-background-color: #1d4ed8; /* slate-900 */
+        }
+
+        .reveal {
+          font-weight: 500;
+        }
+
+        .reveal .slides::after {
+          content: "";
+          position: fixed;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background-image: radial-gradient(
+            circle at center,
+            #38bdf8 0,
+            rgba(56, 189, 248, 0) 35%
+          );
+          animation: pulse 15s ease-in-out infinite;
+          z-index: 0;
+        }
+
+        .reveal .slides > section,
+        .reveal .slides > section > .r-stack {
+          z-index: 1;
+        }
+
+        @keyframes pulse {
+          0%,
+          100% {
+            transform: scale(0.8) translate(10%, 10%);
+            opacity: 0.3;
+          }
+          50% {
+            transform: scale(1.2) translate(0, 0);
+            opacity: 0.5;
+          }
+        }
+
+        .reveal h1,
+        .reveal h2,
+        .reveal h3,
+        .reveal h4 {
+          font-weight: 800;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .reveal .slide-title-left {
+          text-align: left;
+        }
+        .reveal section.text-center {
+          text-align: center;
+        }
+
+        .card {
+          background-color: rgba(30, 41, 59, 0.5); /* slate-800/50 */
+          border: 1px solid rgba(51, 65, 85, 0.7); /* slate-700/70 */
+          border-radius: 1rem;
+          padding: 1.5rem;
+          backdrop-filter: blur(10px);
+        }
+
+        .tag {
+          background-color: rgb(0 0 0 / 15%);
+          color: #ffffff;
+          border-radius: 9999px;
+          padding: 0.5rem 1.5rem;
+          font-weight: 700;
+          display: inline-block;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="reveal">
+        <div class="slides">
+          <!-- Slide 1: Judul -->
+          <section class="text-center">
+            <!-- <i
+              data-lucide="rocket"
+              class="w-24 h-24 text-orange-400 mx-auto mb-4"
+            ></i> -->
+            <div class="flex items-center justify-center">
+              <img src="https://psb.smaithsi.info/assets/img/logo/logo583.png" class="w-24 h-24 mx-auto mb-4" alt="sekolah-hsi" />
+            </div>
+            <h2 class="font-bold text-6xl">Looking Forward for <span class="text-orange-400">IT</span></h2>
+            <h4 class="mt-4 text-slate-300">
+              Menjadi Developer Muslim yang Berkarakter, Mandiri, dan Syar'i
+            </h4>
+            <p class="mt-12 tag text-[32px]">SMA IT <span class="text-orange-400">HSI</span>: The Real Santri, Ahli IT.</p>
+            <div class="flex flex-row justify-between text-sm opacity-75 mx-11 mt-4">
+              <p>Rabu, 09 Juli 2025</p>
+              <p>by <a href="https://andynur.my.id" target="_blank" class="text-white">@andynur</a></p>
+            </div>
+            <aside class="notes">
+              Assalamualaikum Warahmatullahi Wabarakatuh.<br />
+              Ahlan wa sahlan di SMA IT HSI! Gimana kabarnya hari ini?<br />
+              Perkenalkan...<br />
+              Hari ini kita akan bicara tentang masa depan, masa depan kalian di
+              dunia IT.
+            </aside>
+          </section>
+
+          <section>
+            <h3 class="slide-title-center font-bold mb-0 text-5xl">
+              MEET THE <span class="text-orange-400">MENTORS</span>!
+            </h3>
+            <div class="fragment fade-up ">
+              <div class="flex flex-col items-center justify-center p-4">
+                <img
+                  src="https://res.cloudinary.com/daucqtq3h/image/upload/v1752036804/39a70839-591e-44b0-a8c3-fbf2432a90e0.png"
+                  class="rounded-full w-[160px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold text-[24px]">Andy Nur 🔥</span>
+              </div>
+              <div class="flex flex-col items-center justify-center p-4">
+                <div class="grid grid-cols-2 gap-6 text-center text-[24px]">
+                  <div class="flex flex-col items-center justify-center p-4">
+                    <img
+                      src="https://res.cloudinary.com/daucqtq3h/image/upload/v1752036005/61565b27-5d7e-4b18-b9ab-7e4cb5d91556.png"
+                      class="rounded-full w-[160px] mb-2 border-2 border-slate-600"
+                    /><span class="font-semibold">Daffa Fawwaz 👍</span>
+                  </div>
+                  <div class="flex flex-col items-center justify-center p-4">
+                    <img
+                      src="https://res.cloudinary.com/daucqtq3h/image/upload/v1752036170/6fc337bb-2937-41a0-a17d-16d5053e5386.png"
+                      class="rounded-full w-[160px] mb-2 border-2 border-slate-600"
+                    /><span class="font-semibold">Muhammad Hamka Rifa'i 💪</span>
+                  </div>              
+                </div>              
+              </div> 
+            </div>
+            <aside class="notes">
+              Perkenalan profil mentor utama (nama, asal, keahlian, pekerjaan sekarang, ) dan 2 asisten mentor (nama, asal, spesialisasi, tugas)
+            </aside>
+          </section>
+
+          <!-- Slide 2: Kenapa IT Penting -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-4xl">
+              Dunia Berubah, Kita <span class="text-orange-400">Berbenah</span>!
+            </h3>
+            <ul class="space-y-6 text-2xl">
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="smartphone"
+                  class="w-8 h-8 text-orange-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Teknologi di Mana-mana:</b> Dari HP kita, game, medsos,
+                  sampai aplikasi belajar.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="trending-up"
+                  class="w-8 h-8 text-orange-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Peluang Besar:</b> Banyak pekerjaan baru di bidang IT yang
+                  menjanjikan.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="lightbulb"
+                  class="w-8 h-8 text-orange-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Memecahkan Masalah:</b> IT membantu kita menyelesaikan
+                  masalah sehari-hari dan umat.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="send"
+                  class="w-8 h-8 text-orange-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Dakwah Digital:</b> IT adalah medan dakwah baru yang sangat
+                  luas!</span
+                >
+              </li>
+            </ul>
+            <aside class="notes">
+              Coba lihat sekeliling kita, semua serba digital.<br />
+              Kalian adalah generasi yang akan hidup di era ini.<br />
+              Jadi, kalian harus siap! Bukan cuma sebagai pengguna, tapi sebagai
+              pencipta.
+            </aside>
+          </section>
+
+          <!-- Slide 3: Visi Program -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-2xl">
+              Visi Kami: Mencetak <span class="text-orange-400">Developer</span> Muslim
+            </h3>
+            <div class="grid grid-cols-2 gap-6 text-[24px]">
+              <div class="fragment fade-up card">
+                <b class="text-orange-400">Berkarakter:</b> Amanah, siddiq, dan
+                ber-EQ tinggi.
+              </div>
+              <div class="fragment fade-up card">
+                <b class="text-orange-400">Mandiri:</b> Menguasai hard & soft skill,
+                mampu menciptakan solusi.
+              </div>
+              <div class="fragment fade-up card">
+                <b class="text-orange-400">Syar'i:</b> Berlandaskan Al-Qur'an &
+                Sunnah dalam setiap aspek.
+              </div>
+              <div class="fragment fade-up card">
+                <b class="text-orange-400">Kontributif:</b> Menggunakan IT untuk
+                kebaikan umat dan dakwah.
+              </div>
+            </div>
+            <aside class="notes">
+              Kami tidak hanya ingin kalian jago coding.<br />
+              Kami ingin kalian menjadi developer yang bertakwa, yang ilmunya
+              bermanfaat untuk agama dan masyarakat. Ini adalah visi besar kita
+              bersama.
+            </aside>
+          </section>
+
+          <!-- Slide 4: Metode Belajar -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-5xl">
+              Belajar IT di HSI: Langsung <span class="text-orange-400">Praktek</span>!
+            </h3>
+            <ul class="space-y-6 text-2xl" style="margin-left: -4em">
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="box"
+                  class="w-8 h-8 text-green-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Project-Based Learning:</b> Belajar sambil membuat proyek
+                  nyata.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="recycle"
+                  class="w-8 h-8 text-green-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Agile & Scrum:</b> Belajar kerja tim seperti di perusahaan
+                  teknologi.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="user-check"
+                  class="w-8 h-8 text-green-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Mentor Berpengalaman:</b> Dibimbing langsung oleh developer
+                  senior.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="users"
+                  class="w-8 h-8 text-green-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Kolaborasi Tim:</b> Belajar bekerja sama dengan
+                  teman-teman.</span
+                >
+              </li>
+            </ul>
+            <aside class="notes">
+              Disini kita tidak akan banyak ceramah teori.<br />
+              Kalian akan langsung coding, langsung buat proyek.<br />
+              Kalian akan punya tim, punya deadline, persis seperti di dunia kerja
+              nanti!
+            </aside>
+          </section>
+
+          <!-- Slide 5: Materi -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-5xl">
+              Petualangan <span class="text-orange-400">Coding</span> Kalian!
+            </h3>
+            <div class="grid grid-cols-3 gap-6 text-center text-[32px]">
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://t4.ftcdn.net/jpg/09/39/56/35/360_F_939563506_cN1THcLcaEO9J6omhwClfeKQDzq0TibW.jpg"
+                  class="rounded-full w-[140px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold">AI 101</span>
+              </div>
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/2560px-Python_logo_and_wordmark.svg.png"
+                  class="rounded-full w-[260px] mb-2 border-2 border-slate-600 bg-white pt-4 pl-5"
+                /><span class="font-semibold">Python</span>
+              </div>
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://www.nicepng.com/png/detail/985-9857805_html5-css3-logo-png-html-and-css-logo.png"
+                  class="rounded-full w-[110px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold">HTML & CSS</span>
+              </div>
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://www.globalcloudteam.com/wp-content/uploads/2023/08/UI_UX.webp"
+                  class="rounded-full w-[110px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold">UI/UX 101</span>
+              </div>
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+                  class="rounded-full w-[110px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold">JavaScript</span>
+              </div>
+              <div
+                class="fragment fade-up flex flex-col items-center justify-center p-4"
+              >
+                <img
+                  src="https://external-preview.redd.it/djmyv90usIFt5_8hOcE9qS-XKzCN7leyknhCsYCJpv0.jpg?width=1080&crop=smart&auto=webp&s=4b5facf42f863a81e51e53fd44ce0ed2e8a863e3"
+                  class="rounded-full w-[205px] mb-2 border-2 border-slate-600"
+                /><span class="font-semibold">Golang</span>
+              </div>
+            </div>
+            <aside class="notes">
+              Kalian akan belajar bahasa-bahasa komputer yang canggih ini.<br />
+              Dari membuat website sederhana, sampai aplikasi yang bisa dipakai
+              banyak orang!
+            </aside>
+          </section>
+
+          <!-- Slide 6: Proyek Akhir -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-5xl">
+              Karya Nyata Kalian untuk <span class="text-orange-400">Umat</span>!
+            </h3>
+            <div class="grid grid-cols-3 gap-6 text-center">
+              <div class="fragment fade-up card">
+                <span  class="w-20 h-20 mx-auto">🍼</span>
+                <h4 class="font-bold text-xl">Kelas X</h3>
+                <p class="text-slate-300 text-[26px]">Website Portfolio Pribadi</p>
+              </div>
+              <div class="fragment fade-up card">
+                <span  class="w-20 h-20 mx-auto">😁</span>
+                <h4 class="font-bold text-xl">Kelas XI</h3>
+                <p class="text-slate-300 text-[26px]">Website & LMS Sekolah</p>
+              </div>
+              <div class="fragment fade-up card">
+                <span  class="w-20 h-20 mx-auto">🗿</span>
+                <h4 class="font-bold text-xl">Kelas XII</h3>
+                <p class="text-slate-300 text-[26px]">Aplikasi untuk Dakwah</p>
+              </div>
+            </div>
+            <aside class="notes">
+              Setiap tahun, kalian akan membuat proyek besar yang bukan cuma
+              tugas.<br />
+              Tapi karya nyata yang bisa kalian banggakan dan bermanfaat untuk
+              sekolah, yayasan, bahkan umat!
+            </aside>
+          </section>
+
+          <!-- Slide 7: Persiapan Masa Depan -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-5xl">
+              Siap Jadi Developer Masa Depan!
+            </h3>
+            <ul class="space-y-6 text-2xl" style="margin-left: -4em;">
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="award"
+                  class="w-8 h-8 text-amber-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Skill Industri:</b> Menguasai teknologi yang dipakai
+                  perusahaan besar.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="folder-kanban"
+                  class="w-8 h-8 text-amber-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Portofolio Kuat:</b> Punya banyak proyek untuk
+                  ditunjukkan.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="users"
+                  class="w-8 h-8 text-amber-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Pengalaman Tim:</b> Terbiasa kerja sama & manajemen
+                  proyek.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="briefcase"
+                  class="w-8 h-8 text-amber-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Internship / Kontribusi Nyata:</b> Kesempatan magang.</span
+                >
+              </li>
+            </ul>
+            <aside class="notes">
+              InsyaAllah, lulus dari sini kalian tidak hanya punya ijazah.<br />
+              Tapi juga skill nyata, portofolio keren, dan pengalaman yang siap
+              bersaing di dunia kerja atau berdakwah!
+            </aside>
+          </section>
+
+          <!-- Slide 8: Komitmen -->
+          <section>
+            <h3 class="font-bold mb-10 text-6xl">Komitmen Kita Bersama</h3>
+            <div class="grid grid-cols-2 gap-10">
+              <div class="fragment fade-up">
+                <h4 class="font-bold text-2xl text-orange-400 mb-4 text-center">
+                  Komitmen <span class="text-orange-400">Santri</span>
+                </h4>
+                <ul class="list-inside text-slate-300 space-y-2 text-[25px]" style="list-style-type: none;">
+                  <li>✅ Niat Ikhlas karena Allah</li>
+                  <li>✅ Disiplin & Tanggung Jawab</li>
+                  <li>✅ Proaktif & Mandiri</li>
+                  <li>✅ Kolaborasi & Komunikasi</li>
+                  <li>✅ Menjaga Integritas</li>
+                </ul>
+              </div>
+              <div class="fragment fade-up">
+                <h4 class="font-bold text-2xl text-green-400 mb-4 text-center">
+                  Komitmen <span class="text-orange-400">Sekolah</span>
+                </h4>
+                <ul class="list-inside text-slate-300 space-y-2 text-[25px]" style="list-style-type: none;">
+                  <li>✅ Kurikulum terbaik berbasis proyek</li>
+                  <li>✅ Mentor & Asisten siap membimbing</li>
+                  <li>✅ Lingkungan belajar yang suportif</li>
+                  <li>✅ Membantu mencapai potensi maksimal</li>
+                </ul>
+              </div>
+            </div>
+            <aside class="notes">
+              Ini adalah janji kita bersama. Dari kami, kami berkomitmen penuh.<br />
+              Dari kalian, kami mengharapkan komitmen yang sama untuk
+              sungguh-sungguh belajar. Sepakat?
+            </aside>
+          </section>
+
+          <!-- Slide 9: Jalur Sukses -->
+          <section>
+            <h3 class="slide-title-left font-bold mb-12 text-5xl">
+              Jalur Sukses Kita
+            </h3>
+            <ul class="space-y-6 text-2xl">
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="gantt-chart-square"
+                  class="w-8 h-8 text-yellow-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Ekspektasi Progres:</b> Target jelas di setiap sprint,
+                  bulan, dan semester.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="message-square-quote"
+                  class="w-8 h-8 text-yellow-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Pentingnya Feedback:</b> Manfaatkan masukan dari mentor
+                  untuk terus berkembang.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="file-check-2"
+                  class="w-8 h-8 text-yellow-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Aturan Main:</b> Patuhi SOP dan tata tertib yang
+                  berlaku.</span
+                >
+              </li>
+              <li class="fragment fade-up flex items-start">
+                <i
+                  data-lucide="life-buoy"
+                  class="w-8 h-8 text-yellow-400 mr-4 mt-1 flex-shrink-0"
+                ></i
+                ><span
+                  ><b>Dukungan Penuh:</b> Mentor, Asisten, dan Musyrif siap
+                  membantu.</span
+                >
+              </li>
+            </ul>
+            <aside class="notes">
+              Perjalanan ini akan menantang, tapi kami akan selalu membersamai
+              kalian.<br />
+              Ada aturan mainnya, ada panduannya, dan ada dukungan penuh dari
+              kami. Jangan pernah sungkan bertanya!
+            </aside>
+          </section>
+
+          <!-- Slide 10: Penutup -->
+          <section class="text-center">
+            <i
+              data-lucide="graduation-cap"
+              class="w-24 h-24 text-orange-400 mx-auto"
+            ></i>
+            <h2 class="font-bold text-6xl">Bismillah!</h2>
+            <h3 class="fragment fade-up mt-4">
+              Kita Cetak Generasi Madrasah Programmer!
+            </h3>
+            <p class="fragment fade-up mt-8 tag">
+              "Paham Tauhid, Tajwid, dan Tailwind!"
+            </p>          
+          </section>
+
+          <!-- Slide 11: Question -->
+          <section class="text-center">          
+            <h2 class="fragment fade-up mt-16 text-orange-400 text-5xl">
+              Ada Pertanyaan?
+            </h2>
+            <div class="flex items-center justify-center fade-upx">
+              <img src="https://psb.smaithsi.info/assets/img/logo/logo583.png" class="w-24 h-24 mx-auto mb-4" alt="sekolah-hsi" />
+            </div>
+            <aside class="notes">
+              Ini adalah perjalanan yang panjang, tapi sangat seru dan insyaAllah
+              penuh berkah.<br />
+              Niatkan semua ini karena Allah. Kami siap membersamai kalian.<br />
+              Mari bersama-sama menjadi generasi developer muslim yang hebat!
+              Sekarang, ada yang ingin ditanyakan?
+            </aside>
+          </section>  
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+      <script>
+        Reveal.initialize({
+          hash: true,
+          transition: "slide",
+          backgroundTransition: "fade",
+          plugins: [RevealNotes],
+        });
+        lucide.createIcons();
+      </script>
+    </body>
+  </html>
