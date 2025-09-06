@@ -1,2 +1,0 @@
-print("BELAJAR PYTHON")
-print("===============")
